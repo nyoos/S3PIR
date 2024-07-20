@@ -21,13 +21,13 @@ There are two ways of running the artifact: building from source or using the pr
 # Build (1~2 human-minutes)
 
 ## From Source
-From the project root directory, run `mkdir build && make`. This will create two binaries, `s3pir` and `s3pir_simlargeserver` in the build folder. 
+From the project root directory, run `mkdir -p build && make`. This will create two binaries, `s3pir` and `s3pir_simlargeserver` in the build folder. 
 
 ## From Dockerfile
-From the project root directory, run `mkdir results && docker build -t s3pir`. This builds the docker image for s3pir and makes a folder to store the benchmark results. 
+From the project root directory, run `mkdir -p results && docker build -t s3pir .` (5 minutes to install). This builds the docker image for s3pir and makes a folder to store the benchmark results. 
 
 # Run Experiments (5 compute-minutes ~ 4 compute-hours)
-There are two versions of our artifact. The default version allocates about ~64gb of memory for the largest database size in our benchmark. If your machine does not have sufficient memory, we recommend using the simulated large server version which simulates the largest database with less memory (less than 0.5gb). 
+There are two versions of our artifact. The default version allocates about ~64gb of memory for the largest database size in our benchmark. If your machine does not have sufficient memory, we recommend using the simulated large server version which simulates the database and allocates less memory (less than 0.5gb for the largest database). 
 
 We also provide three sets of benchmarks which reproduce the performance results of tables 2 and 3 for S3PIR in the paper. 
 The small set reproduces the first 2 rows and takes around ~3 minutes to run. 
