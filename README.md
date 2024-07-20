@@ -64,8 +64,8 @@ To run the simulated large server version:
 The binaries can also be used to profile the implementation with different database parameters.
 
 * Run `./build/s3pir --one-server <Log2 DB Size> <Entry Size> <Output File>` or 
-`./build/s3pir --one-server <Log2 DB Size> <Entry Size> <Output File>` to run the protocol on a database with `<Log2 DB Size>` number of entries and entries of `<Entry Size>` bytes with the one server or two server variant respectively. 
-* Run the `s3pir_simlargeserver` binary to use the simulated large server version.
+`./build/s3pir --two-server <Log2 DB Size> <Entry Size> <Output File>` to run the protocol on a database with `<Log2 DB Size>` number of entries and entries of `<Entry Size>` bytes with the one server or two server variant respectively. 
+* Run the `s3pir_simlargeserver` binary with the same arguments to use the simulated large server version.
 
 To interact with these binaries using the Dockerfile, run `docker run -it s3pir -interactive` which opens an interactive shell. The binaries will be found in `./build`.
 
