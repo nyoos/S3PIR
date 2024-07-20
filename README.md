@@ -27,7 +27,7 @@ From the project root directory, run `mkdir build && make`. This will create two
 From the project root directory, run `mkdir results && docker build -t s3pir`. This builds the docker image for s3pir and makes a folder to store the benchmark results. 
 
 # Run Experiments (5 compute-minutes ~ 4 compute-hours)
-There are two versions of our artifact. The default version allocates about ~64gb of memory for the largest database size in our benchmark. If your machine does not have sufficient memory, we recommend using the simlargeserver version which simulates the largest database with less memory (less than 0.5gb). 
+There are two versions of our artifact. The default version allocates about ~64gb of memory for the largest database size in our benchmark. If your machine does not have sufficient memory, we recommend using the simulated large server version which simulates the largest database with less memory (less than 0.5gb). 
 
 We also provide three sets of benchmarks which reproduce the performance results of tables 2 and 3 for S3PIR in the paper. 
 The small set reproduces the first 2 rows and takes around ~3 minutes to run. 
@@ -64,7 +64,8 @@ To run the simulated large server version:
 The binaries can also be used to profile the implementation with different database parameters.
 
 * Run `./build/s3pir --one-server <Log2 DB Size> <Entry Size> <Output File>` or 
-`./build/s3pir --one-server <Log2 DB Size> <Entry Size> <Output File>` to run the protocol on a database with `<Log2 DB Size>` number of entries and entries of `<Entry Size>` bytes with the one server or two server variant respectively. * Run the `s3pir_simlargeserver` binary to use the simulated large server version.
+`./build/s3pir --one-server <Log2 DB Size> <Entry Size> <Output File>` to run the protocol on a database with `<Log2 DB Size>` number of entries and entries of `<Entry Size>` bytes with the one server or two server variant respectively. 
+* Run the `s3pir_simlargeserver` binary to use the simulated large server version.
 
 To interact with these binaries using the Dockerfile, run `docker run -it s3pir -interactive` which opens an interactive shell. The binaries will be found in `./build`.
 
