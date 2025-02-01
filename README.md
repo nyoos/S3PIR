@@ -1,3 +1,5 @@
+**An updated version of this artifact can be found at https://github.com/renling/S3PIR.**
+
 Artifact: Simple and Practical Sublinear Private Information Retrieval
 
 This artifact provides an implementation of the S3PIR protocol. Running the artifact will reproduce S3PIR's performance results given in table 2 and table 3.
